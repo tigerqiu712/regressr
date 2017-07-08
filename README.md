@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/eBay/regressr.svg?branch=master)](https://travis-ci.org/eBay/regressr)
+
 <p align="center"><img src="https://github.com/eBay/regressr/blob/master/Regressr.png"/></p>
 
 Regressr is a command line tool to test http services. With Regressr, a test engineer can write several strategies that test several request-response conversations. Once the strategies are created, they can be run against the service to record the gold standard. When a new build is deployed, the strategies can be run again to capture any regressions and a comparison report is generated which can be used to roll back the new build if required. 
