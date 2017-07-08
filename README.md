@@ -8,7 +8,7 @@ Regressr aims to keep regression testing SIMPLE and overhead to a minimum.
 
 Features:
 
- * Customizable to all kinds of HTTP based services. Write what to call, what to record and what to compare. Regressr provides default implementations of these [components](https://github.com/ebay/regressr/tree/master/src/main/scala/com/ebay/n/regression/internal/components) for your convenience. If these do not work for your requirements, write your own components in Scala. 
+ * Customizable to all kinds of HTTP based services. Write what to call, what to record and what to compare. Regressr provides default implementations of these [components](https://github.com/ebay/regressr/tree/master/src/main/scala/org/ebayopensource/regression/internal/components) for your convenience. If these do not work for your requirements, write your own components in Scala. 
  * Super simple to grok with a low conceptual surface area. Write a basic regression suite quickly within minutes. Or write a complex and exhaustive service regression suite within a few days of using Regressr instead of months.
  * Pluggable datastores and report generators.
  * Command line execution and report generation.
@@ -61,7 +61,7 @@ The diagram explains what is done in these two modes:
 
 One question that users may have is about recorded and replayed entries. Entries are strings that the tester chooses to record and compare. An example of an entry could be the HTTP response status code. Recording an entry like this will catch regressions in change of response status codes between the two runs.
 
-For comparing two valid JSONs, use the JSON comparator that comes with Regressr: https://github.com/ebay/regressr/blob/master/src/main/scala/com/ebay/n/regression/internal/components/comparator/SimpleHTTPJsonComparator.scala
+For comparing two valid JSONs, use the JSON comparator that comes with Regressr: https://github.com/ebay/regressr/blob/master/src/main/scala/org/ebayopensource/regression/internal/components/comparator/SimpleHTTPJsonComparator.scala
 
 This comparator ignores differences in values.
 
