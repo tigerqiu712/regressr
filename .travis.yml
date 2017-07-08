@@ -1,3 +1,4 @@
+# Build config for Regressr
 language: scala
 scala:
   - 2.11.8
