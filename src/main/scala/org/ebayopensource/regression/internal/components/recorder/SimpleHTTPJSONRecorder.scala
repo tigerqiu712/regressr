@@ -1,6 +1,6 @@
 package org.ebayopensource.regression.internal.components.recorder
 
-import com.ebay.n.play.svc.common.JacksonUtil
+import org.ebayopensource.regression.internal.common.Util
 import org.ebayopensource.regression.internal.components.recorder.common.{Recorder, RecordingEntry, RequestRecordingEntry, RequestRecordingEntryTypes}
 import org.ebayopensource.regression.internal.http.HTTPResponse
 
@@ -11,7 +11,7 @@ import scala.util.{Failure, Success, Try}
   */
 class SimpleHTTPJSONRecorder extends Recorder {
 
-  val mapper = JacksonUtil.objectMapper
+  val mapper = Util.getMapper()
 
   override def record(responses: Seq[HTTPResponse]): Try[RequestRecordingEntry] = Try {
 

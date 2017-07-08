@@ -1,6 +1,6 @@
 package org.ebayopensource.regression.internal.components.comparator
 
-import com.ebay.n.play.svc.common.JacksonUtil
+import org.ebayopensource.regression.internal.common.Util
 import org.ebayopensource.regression.internal.components.comparator.common.{Comparator, CompareMessage}
 import org.ebayopensource.regression.internal.components.recorder.common.{RecordingEntry, RequestRecordingEntry, RequestRecordingEntryTypes}
 import org.ebayopensource.regression.json.CustomJsonAssert
@@ -57,7 +57,7 @@ class SimpleHTTPJsonComparator extends Comparator {
     }
   }
 
-  val mapper = JacksonUtil.objectMapper
+  val mapper = Util.getMapper()
 
   def getJSONComparisonErrors(prev: String, newOne: String): Option[String] = {
     var cleansedOne = prev.replaceAll("\\\\","")

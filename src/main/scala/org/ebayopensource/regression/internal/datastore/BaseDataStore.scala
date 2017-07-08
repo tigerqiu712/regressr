@@ -1,9 +1,8 @@
 package org.ebayopensource.regression.internal.datastore
 
-import com.ebay.n.play.svc.common.JacksonUtil
+import org.ebayopensource.regression.internal.common.Util
 import org.ebayopensource.regression.internal.components.recorder.common.RequestRecordingEntry
 
-import scala.io.Source
 import scala.util.Try
 
 /**
@@ -11,7 +10,7 @@ import scala.util.Try
   */
 abstract class BaseDataStore {
 
-  val mapper = JacksonUtil.objectMapper
+  val mapper = Util.getMapper()
 
   def storeStrategy(testIdentifier: String, strategyFileContent: String): Try[String] = Try {
     put(BaseDataStore.getStrategyContentKey(testIdentifier), strategyFileContent)

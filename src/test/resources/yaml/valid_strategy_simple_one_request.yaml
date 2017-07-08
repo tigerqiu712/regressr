@@ -12,11 +12,9 @@ requests:
   - requestName: how are you
     path: /utterance
     method: POST
-    requestBuilder: org.ebayopensource.regression.application.aio.AIORequestBuilder
+    requestBuilder: org.ebayopensource.regression.internal.components.requestBuilder.FileHTTPBodyBuilder
     dataInput:
-      conversationId  : MESSENGER:12350
-      type            : text
-      text            : How are you?
-    recorder: org.ebayopensource.regression.application.aio.AIOSimpleHTTPJSONRecorder
+      payloadFile     : /tmp/examplePayloadFile
+    recorder: org.ebayopensource.regression.internal.components.recorder.SimpleHTTPJSONRecorder
     comparator: org.ebayopensource.regression.internal.components.comparator.SimpleHTTPJsonComparator
 

@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.8.7",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.8.7",
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-yaml" % "2.8.7",
-  "com.ebay.n" %% "play-svc-common" % "2.0.2",
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.8.9",
   "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
   "org.skyscreamer" % "jsonassert" % "1.5.0",
   "org.slf4j" % "slf4j-api" % "1.7.5",
@@ -47,7 +47,3 @@ lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")
 compileScalastyle := org.scalastyle.sbt.ScalastylePlugin.scalastyle.in(Compile).toTask("").value
 (compile in Compile) <<= (compile in Compile) dependsOn compileScalastyle
 
-publishTo := {
-  val repo = if (version.value endsWith "SNAPSHOT") "snapshots" else "releases"
-  Some("nexus.nchant.us" at "http://nexus.nchant.us/nexus/content/repositories/" + repo)
-}

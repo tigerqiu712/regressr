@@ -1,5 +1,4 @@
 package org.ebayopensource.regression.internal.components.printer
-import org.ebayopensource.regression.application.aio.graph.AIOGraphContinuationPrinter
 import org.ebayopensource.regression.internal.http.HTTPResponse
 import org.slf4j.LoggerFactory
 
@@ -8,7 +7,7 @@ import org.slf4j.LoggerFactory
   */
 class URLProgressPrinter extends ProgressPrinter {
 
-  val logger = LoggerFactory.getLogger(classOf[AIOGraphContinuationPrinter])
+  val logger = LoggerFactory.getLogger(classOf[URLProgressPrinter])
 
   override def printProgress(response: HTTPResponse): Unit = {
     logger.info(s"Calling URL ${response.request.url.toString}")
