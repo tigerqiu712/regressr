@@ -10,5 +10,5 @@ conf/application.local.conf
 
 *.DS_Store
 *.swp
-testrun*
+testrun*.html
 tmp
