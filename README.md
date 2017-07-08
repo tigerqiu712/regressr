@@ -6,7 +6,7 @@ Regressr aims to keep regression testing SIMPLE and overhead to a minimum.
 
 Features:
 
- * Customizable to all kinds of HTTP based services. Write what to call, what to record and what to compare. Regressr provides default implementations of these [components](https://github.corp.ebay.com/N/regressr/tree/master/src/main/scala/com/ebay/n/regression/internal/components) for your convenience. If these do not work for your requirements, write your own components in Scala. 
+ * Customizable to all kinds of HTTP based services. Write what to call, what to record and what to compare. Regressr provides default implementations of these [components](https://github.com/ebay/regressr/tree/master/src/main/scala/com/ebay/n/regression/internal/components) for your convenience. If these do not work for your requirements, write your own components in Scala. 
  * Super simple to grok with a low conceptual surface area. Write a basic regression suite quickly within minutes. Or write a complex and exhaustive service regression suite within a few days of using Regressr instead of months.
  * Pluggable datastores and report generators.
  * Command line execution and report generation.
@@ -55,11 +55,11 @@ Regressr supports two modes of execution:
 
 The diagram explains what is done in these two modes:
 
-<p align="center"><img src="https://github.corp.ebay.com/N/regressr/blob/master/RegressrFlow.png"/></p>
+<p align="center"><img src="https://github.com/ebay/regressr/blob/master/RegressrFlow.png"/></p>
 
 One question that users may have is about recorded and replayed entries. Entries are strings that the tester chooses to record and compare. An example of an entry could be the HTTP response status code. Recording an entry like this will catch regressions in change of response status codes between the two runs.
 
-For comparing two valid JSONs, use the JSON comparator that comes with Regressr: https://github.corp.ebay.com/N/regressr/blob/master/src/main/scala/com/ebay/n/regression/internal/components/comparator/SimpleHTTPJsonComparator.scala
+For comparing two valid JSONs, use the JSON comparator that comes with Regressr: https://github.com/ebay/regressr/blob/master/src/main/scala/com/ebay/n/regression/internal/components/comparator/SimpleHTTPJsonComparator.scala
 
 This comparator ignores differences in values.
 
@@ -89,7 +89,7 @@ Use this component when you want to generate a new (or several) new requests pro
 
 For each HTTPResponse that is received by Regressr, the continuation is expected to create 0 or more HTTPRequest instances that are used to make requests. Also remember to create a base case when the continuation will stop by returning an empty Seq() 
 
-The ideal use case for continuations is when you want to traverse a resource tree of HATEOAS RESTful services. An example of continuations is [here](https://github.corp.ebay.com/N/regressr/tree/master/example/continuation/README.md).
+The ideal use case for continuations is when you want to traverse a resource tree of HATEOAS RESTful services. An example of continuations is [here](https://github.com/ebay/regressr/tree/master/example/continuation/README.md).
 
 #### ProgressPrinter [Optional]
 For simple requests, Regressr auto prints the requests as they are made on the console. For continuation requests, you might also want to specify a progress printer to let Regressr know how you want your continuations to be printed on the console. This helps in debugging complex continuations.
