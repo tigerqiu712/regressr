@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/eBay/regressr.svg?branch=master)](https://travis-ci.org/eBay/regressr)
+[![Build Status](https://travis-ci.org/eBay/regressr.svg?branch=master)](https://travis-ci.org/eBay/regressr) ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
 <p align="center"><img src="https://github.com/eBay/regressr/blob/master/Regressr.png"/></p>
 
