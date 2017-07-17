@@ -5,7 +5,6 @@ import java.net.URI
 import org.ebayopensource.regression.internal.http.{BaseHttpClient, HTTPRequest, HTTPResponse, SimpleHttpClient}
 import org.ebayopensource.regression.internal.reader.{RequestEntry, TestStrategy}
 
-import scala.collection.JavaConversions.mapAsJavaMap
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 import scala.util.{Failure, Success, Try}
@@ -20,7 +19,7 @@ object WorkflowTools {
     // scalastyle:off
     val tryHTTPResponse = for {
       httpRequest <- convertRequestEntryToRequest(request, strategy)
-      httpResponse <- new SimpleHttpClient(new BaseHttp()).execute(httpRequest)
+      httpResponse <- httpClient.execute(httpRequest)
     } yield (httpResponse)
     // scalastyle:on
 
@@ -46,7 +45,7 @@ object WorkflowTools {
     queue.enqueue(firstRequest.get)
 
     while (!queue.isEmpty) {
-      new SimpleHttpClient(new BaseHttp()).execute(queue.dequeue()) match {
+      httpClient.execute(queue.dequeue()) match {
         case Success(httpResponse) => {
           if (requestEntry.progressPrinter.isDefined) requestEntry.progressPrinter.get.printProgress(httpResponse)
           httpResponses += httpResponse

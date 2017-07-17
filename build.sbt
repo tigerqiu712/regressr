@@ -40,8 +40,12 @@ libraryDependencies ++= {
 
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.1" % Test
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % Test
+libraryDependencies += "org.mockito" % "mockito-core" % "1.10.19" % Test
+
+
 
 scalastyleConfig := file("project/scalastyle-config.xml")
+
 
 lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")
 compileScalastyle := org.scalastyle.sbt.ScalastylePlugin.scalastyle.in(Compile).toTask("").value
