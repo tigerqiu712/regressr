@@ -36,6 +36,8 @@ libraryDependencies ++= {
   }
 }
 
+coverageExcludedPackages := "org.ebayopensource.regression.example.*"
+
 // Test dependencies
 
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.1" % Test

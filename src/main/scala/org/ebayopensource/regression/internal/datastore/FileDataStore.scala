@@ -42,7 +42,7 @@ class FileDataStore(path: String) extends BaseDataStore {
   }
 
   override def remove(key: String): Unit = {
-    new File(key).delete()
+    new File(s"${path}${key}").delete()
   }
 
   override def deleteRecordingFiles(testIdentifier: String): Try[Unit] = Try {

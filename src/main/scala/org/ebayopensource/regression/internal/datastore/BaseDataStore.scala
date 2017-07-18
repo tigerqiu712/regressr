@@ -21,6 +21,10 @@ abstract class BaseDataStore {
     get(BaseDataStore.getStrategyContentKey(testIdentifier)).orElse(None)
   }
 
+  def deleteStrategy(testIdentifier:String) : Try[Unit] = Try {
+    remove(BaseDataStore.getStrategyContentKey(testIdentifier))
+  }
+
   def storeRequestRecording(testIdentifier: String, requestName: String, requestRecordingEntries: RequestRecordingEntry): Try[String] = Try {
     val recordingString = mapper.writeValueAsString(requestRecordingEntries)
     put(BaseDataStore.getRequestRecordingKey(testIdentifier, requestName), recordingString)
@@ -34,10 +38,6 @@ abstract class BaseDataStore {
         s"Data store might lack integrity. Please erase the datastore and start again.")
     }
     mapper.readValue[RequestRecordingEntry](recording.get)
-  }
-
-  def deleteStrategy(testIdentifier:String) : Try[Unit] = Try {
-    remove(BaseDataStore.getStrategyContentKey(testIdentifier))
   }
 
   def deleteRecording(testIdentifier:String) : Try[Unit] = Try {
