@@ -18,7 +18,7 @@ Features:
 * SBT [install from here](http://www.scala-sbt.org/download.html)
 
 ## Quick Start
-```git clone git@github.corp.ebay.com:N/regressr.git```
+```git clone git@github.ebay.com:eBay/regressr.git```
 
 For your convenience, regressr comes with some mock services out of the box. 
 
