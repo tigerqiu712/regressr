@@ -2,13 +2,12 @@ package org.ebayopensource.regression.internal.workflow
 
 import java.net.URI
 
-import org.ebayopensource.regression.internal.http.{BaseHttpClient, HTTPRequest, HTTPResponse, SimpleHttpClient}
+import org.ebayopensource.regression.internal.http.{BaseHttpClient, HTTPRequest, HTTPResponse}
 import org.ebayopensource.regression.internal.reader.{RequestEntry, TestStrategy}
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 import scala.util.{Failure, Success, Try}
-import scalaj.http.BaseHttp
 
 /**
   * Created by asfernando on 4/29/17.

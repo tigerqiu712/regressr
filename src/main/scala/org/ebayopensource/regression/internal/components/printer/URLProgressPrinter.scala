@@ -10,6 +10,6 @@ class URLProgressPrinter extends ProgressPrinter {
   val logger = LoggerFactory.getLogger(classOf[URLProgressPrinter])
 
   override def printProgress(response: HTTPResponse): Unit = {
-    logger.info(s"Calling URL ${response.request.url.toString}")
+    if (Option(response.request).isDefined) logger.info(s"Calling URL ${response.request.url.toString}")
   }
 }
