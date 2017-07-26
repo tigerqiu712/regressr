@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/eBay/regressr/blob/master/Regressr.png"/></p>
 
-[![Build Status](https://travis-ci.org/eBay/regressr.svg?branch=master)](https://travis-ci.org/eBay/regressr) ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) [![Coverage Status](https://img.shields.io/codecov/c/github/eBay/regressr.svg)](https://codecov.io/github/eBay/regressr)
+[![Build Status](https://travis-ci.org/eBay/regressr.svg?branch=master)](https://travis-ci.org/eBay/regressr) ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) [![Coverage Status](https://codecov.io/gh/eBay/regressr/branch/master/graph/badge.svg)](https://codecov.io/github/eBay/regressr)
 
 Regressr is a command line tool to test http services. With Regressr, a test engineer can write several strategies that test several request-response conversations. Once the strategies are created, they can be run against the service to record the gold standard. When a new build is deployed, the strategies can be run again to capture any regressions and a comparison report is generated which can be used to roll back the new build if required. 
 
@@ -18,7 +18,7 @@ Features:
 * SBT [install from here](http://www.scala-sbt.org/download.html)
 
 ## Quick Start
-```git clone git@github.corp.ebay.com:N/regressr.git```
+```git clone git@github.ebay.com:eBay/regressr.git```
 
 For your convenience, regressr comes with some mock services out of the box. 
 
